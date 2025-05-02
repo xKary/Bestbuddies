@@ -3,6 +3,69 @@ const windows = [...document.querySelectorAll("[data-window]")];
 const triggers = [...document.querySelectorAll("[data-window-trigger]")];
 const errors = [...document.querySelectorAll("[data-error-trigger]")];
 
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("image-container");
+  
+    const images = [
+        "./src/images/1.jpg",
+        "./src/images/2.jpg",
+        "./src/images/3.jpg",
+        "./src/images/4.jpg",
+        "./src/images/5.jpg",
+        "./src/images/6.jpg",
+        "./src/images/7.jpg",
+        "./src/images/8.jpg",
+        "./src/images/9.jpg",
+        "./src/images/10.jpg",
+    ];
+  
+    const placedImages = [];
+
+    function isOverlapping(x, y, w, h) {
+      return placedImages.some(img => {
+        const buffer = 10;
+        return (
+          x + w > img.x - buffer &&
+          x < img.x + img.w + buffer &&
+          y + h > img.y - buffer &&
+          y < img.y + img.h + buffer
+        );
+      });
+    }
+  
+    images.forEach(src => {
+      let tries = 0;
+      let x, y, w, h;
+  
+      do {
+        w = Math.floor(Math.random() * 341) + 160;
+        h = Math.floor(Math.random() * 341) + 160;
+        const minX = window.innerWidth * 0.1;
+        const maxX = window.innerWidth - w;
+        x = Math.floor(Math.random() * (maxX - minX)) + minX;
+        y = Math.floor(Math.random() * (window.innerHeight - h));
+        tries++;
+      } while (isOverlapping(x, y, w, h) && tries < 100);
+  
+      if (tries >= 100) {
+        console.warn("Couldn't place image without overlapping.");
+        return;
+      }
+  
+      const img = document.createElement("img");
+      img.src = src;
+      img.classList.add("random-image");
+      img.style.width = `${w}px`;
+      img.style.height = `${h}px`;
+      img.style.left = `${x}px`;
+      img.style.top = `${y}px`;
+  
+      container.appendChild(img);
+      placedImages.push({ x, y, w, h });
+    });
+  });
+  
+
 start.addEventListener("click", (e) => {
     if (start.checked) {
         start.setAttribute("checked", "");
@@ -277,13 +340,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-label.addEventListener("click", () => {
-    const parentWindow = container.closest(".window");
-    if (parentWindow) {
-      parentWindow.style.opacity = "1";
-      parentWindow.style.visibility = "visible";
-      parentWindow.style.zIndex = "10";
-    }
-    const isVisible = getComputedStyle(container).display === "flex";
-    container.style.display = isVisible ? "none" : "flex";
-  });
+
