@@ -3,6 +3,19 @@ const windows = [...document.querySelectorAll("[data-window]")];
 const triggers = [...document.querySelectorAll("[data-window-trigger]")];
 const errors = [...document.querySelectorAll("[data-error-trigger]")];
 
+function shuffle(array) {
+    let currentIndex = array.length;
+  
+    while (currentIndex != 0) {
+  
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("image-container");
   
@@ -19,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "./src/images/10.jpg",
     ];
   
+    shuffle(images);
     const placedImages = [];
 
     function isOverlapping(x, y, w, h) {
