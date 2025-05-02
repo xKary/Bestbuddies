@@ -121,6 +121,7 @@ ol {
 .underline > li > a:not(.no-line) .line,
 .underline > li > label:not(.no-line) .line {
   display: inline-block;
+
 }
 
 label:before, label:after,
@@ -476,6 +477,11 @@ li:hover > .label-nested:after {
 .label-folder-small:not(.folders label):not(.label-nested):after {
   -webkit-mask-image: url("https://assets.codepen.io/345377/folder-small.png");
   mask-image: url("https://assets.codepen.io/345377/folder-small.png");
+}
+
+.label-photo:before {
+  background-image: url("./src/images/group_japan_s.jpg");
+  background-repeat: no-repeat;
 }
 
 .label-recycle-bin:before {
@@ -4610,4 +4616,29 @@ input[id*=error-]:checked ~ main #alerts {
     border-style: inset;
     box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #fff;
     transform: translate(1px, 1px);
+}
+
+#carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  background-color: white;
+
+}
+
+#carousel-container img {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+#carousel-container button {
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 8px;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
 }

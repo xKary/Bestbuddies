@@ -110,7 +110,7 @@ triggers.forEach((trigger) => {
     let menu = window.querySelector("[data-menu]");
     let max = document.querySelector(`#${name}-maximize`);
     let drag;
-    window.addEventListener("click", (e) => {
+    window.addEventListener("change", (e) => {
         start.checked = false;
         start.removeAttribute("checked");
         if (!trigger.classList.contains("active")) {
@@ -276,3 +276,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 });
+
+label.addEventListener("click", () => {
+    const parentWindow = container.closest(".window");
+    if (parentWindow) {
+      parentWindow.style.opacity = "1";
+      parentWindow.style.visibility = "visible";
+      parentWindow.style.zIndex = "10";
+    }
+    const isVisible = getComputedStyle(container).display === "flex";
+    container.style.display = isVisible ? "none" : "flex";
+  });

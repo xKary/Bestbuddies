@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Besties</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='style.css'>
 </head>
 <body>
 <input data-start hidden id='start' type='checkbox'>
@@ -48,8 +48,12 @@
 <input data-name='dino-game' data-window-trigger hidden id='dino-game' type='checkbox'>
 <input data-minimize data-name='dino-game' hidden id='dino-game-minimize' type='checkbox'>
 <input data-maximize data-name='dino-game' hidden id='dino-game-maximize' type='checkbox'>
+<input data-name='recycle-bin' data-window-trigger hidden id='recycle-bin' type='checkbox'>
+<input data-minimize data-name='recycle-bin' hidden id='recycle-bin-minimize' type='checkbox'>
+<input data-maximize data-name='recycle-bin' hidden id='recycle-bin-maximize' type='checkbox'>
 <main>
     <div id='desktop'>
+        <!--Main screen | Desktop view-->
         <div id='icons'>
             <label class='desktop-icon label-computer' for='computer' tabindex='0'>
                 <span>My Computer</span>
@@ -57,13 +61,14 @@
             <label class='desktop-icon label-inbox'>
                 <span>Inbox</span>
             </label>
-            <label class='desktop-icon label-recycle-bin'>
-                <span>Recycle Bin</span>
+            <label class='desktop-icon label-recycle-bin' tabindex="0">
+                <span id="recycle-bin">Don't look</span>
             </label>
             <label class='desktop-icon label-program' for='dino-game' tabindex='0'>
                 <span>Dino Game</span>
             </label>
         </div>
+        
         <div id='windows'>
             <div class='window' data-window id='window-welcome'>
                 <div class='window-inside'>
@@ -78,13 +83,13 @@
                     <div class='window-content'>
                         <div class='information-container'>
                             <div class='information'>
-                                <h2 style="text-align: center;"><strong>🕵️ MISSION BRIEFING</strong></h2>
+                                <h2 style='text-align: center;'><strong>🕵️ MISSION BRIEFING</strong></h2>
                                 <p>Two agents: <em>Seif & Karina</em>.</p>
                                 <p>Their <strong>shared history</strong> has been encrypted on this device.</p>
                                 <p>Your task: <em>decode the truth</em>.</p>
                                 <p>Explore folders, decrypt files, and recover their story.</p>
                                 <p><strong>Split into 2 teams</strong>. First team to find <em>5 of 7 clues</em> wins.</p>
-                                <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                                <div style='text-align: center; margin-top: 20px; margin-bottom: 20px;'>
 
                                 </div>
                             </div>
@@ -92,7 +97,7 @@
                     </div>
                     <div class='window-footer'>
                         <label class='button' for='welcome' tabindex='0'>
-                            <button id="start-mission-btn" class="button" style="padding: 6px 12px; font-weight: bold; cursor: pointer; background-color: #c0c0c0; border: outset 2px #dfdfdf; font-family: 'MS Sans Serif', sans-serif;">
+                            <button id='start-mission-btn' class='button' style='padding: 6px 12px; font-weight: bold; cursor: pointer; background-color: #c0c0c0; border: outset 2px #dfdfdf; font-family: 'MS Sans Serif', sans-serif;'>
                             <span>START MISSION</span>
                             </button>
                         </label>
@@ -319,8 +324,8 @@
                         <li>
                             <a class='menu-item-edit' data-label href='#'>Edit</a>
                             <menu class='sub-menu underline'>
-                                <li><label class="label-disabled">Undo</label></li><li><hr></li><li><label class="label-disabled"><span><span>Cu</span><span class="line">t</span></span></label></li><li><label class="label-disabled">Copy</label></li><li><label class="label-disabled">Paste</label></li>
-                                <li><label class="label-disabled"><span><span>Paste&nbsp;</span><span class="line">Shortcut</span></span></label></li><li><hr></li><li><label class="label-disabled"><span><span>Select&nbsp;</span><span class="line">All</span></span></label></li><li><label class="label-disabled">Invert Selection</label></li>
+                                <li><label class='label-disabled'>Undo</label></li><li><hr></li><li><label class='label-disabled'><span><span>Cu</span><span class='line'>t</span></span></label></li><li><label class='label-disabled'>Copy</label></li><li><label class='label-disabled'>Paste</label></li>
+                                <li><label class='label-disabled'><span><span>Paste&nbsp;</span><span class='line'>Shortcut</span></span></label></li><li><hr></li><li><label class='label-disabled'><span><span>Select&nbsp;</span><span class='line'>All</span></span></label></li><li><label class='label-disabled'>Invert Selection</label></li>
                             </menu>
                         </li>
                         <li>
@@ -352,12 +357,12 @@
                                         <span class='line'>List</span>
                                     </label>
                                 </li>
-                                <li><a class="label-nested"><span><span>Arrange&nbsp;</span><span class="line">Icons</span></span></a><menu class="sub-menu underline"><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Name</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Type</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;Si</span><span class="line">ze</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Date</span></span></label></li><li><hr></li><li><label class="label-disabled">Auto Arrange</label></li></menu></li><li><label class="label-disabled"><span><span>Lin</span><span class="line">e up Icons</span></span></label></li><li><hr></li><li><label class="label-disabled">Refresh</label></li><li><label class="label-disabled">Options...</label></li>
+                                <li><a class='label-nested'><span><span>Arrange&nbsp;</span><span class='line'>Icons</span></span></a><menu class='sub-menu underline'><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Name</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Type</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;Si</span><span class='line'>ze</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Date</span></span></label></li><li><hr></li><li><label class='label-disabled'>Auto Arrange</label></li></menu></li><li><label class='label-disabled'><span><span>Lin</span><span class='line'>e up Icons</span></span></label></li><li><hr></li><li><label class='label-disabled'>Refresh</label></li><li><label class='label-disabled'>Options...</label></li>
                             </menu>
                         </li>
                         <li>
                             <a class='menu-item-help' data-label href='#'>Help</a>
-                            <menu class="sub-menu underline"><li><label class="label-disabled">Help Topics</label></li><li><hr></li><li><label class="label-disabled">About Windows 95</label></li></menu>
+                            <menu class='sub-menu underline'><li><label class='label-disabled'>Help Topics</label></li><li><hr></li><li><label class='label-disabled'>About Windows 95</label></li></menu>
                         </li>
                     </menu>
                     <div class='window-content'>
@@ -425,8 +430,8 @@
                         <li>
                             <a class='menu-item-edit' data-label href='#'>Edit</a>
                             <menu class='sub-menu underline'>
-                                <li><label class="label-disabled">Undo</label></li><li><hr></li><li><label class="label-disabled"><span><span>Cu</span><span class="line">t</span></span></label></li><li><label class="label-disabled">Copy</label></li><li><label class="label-disabled">Paste</label></li>
-                                <li><label class="label-disabled"><span><span>Paste&nbsp;</span><span class="line">Shortcut</span></span></label></li><li><hr></li><li><label class="label-disabled"><span><span>Select&nbsp;</span><span class="line">All</span></span></label></li><li><label class="label-disabled">Invert Selection</label></li>
+                                <li><label class='label-disabled'>Undo</label></li><li><hr></li><li><label class='label-disabled'><span><span>Cu</span><span class='line'>t</span></span></label></li><li><label class='label-disabled'>Copy</label></li><li><label class='label-disabled'>Paste</label></li>
+                                <li><label class='label-disabled'><span><span>Paste&nbsp;</span><span class='line'>Shortcut</span></span></label></li><li><hr></li><li><label class='label-disabled'><span><span>Select&nbsp;</span><span class='line'>All</span></span></label></li><li><label class='label-disabled'>Invert Selection</label></li>
                             </menu>
                         </li>
                         <li>
@@ -458,12 +463,12 @@
                                         <span class='line'>List</span>
                                     </label>
                                 </li>
-                                <li><a class="label-nested"><span><span>Arrange&nbsp;</span><span class="line">Icons</span></span></a><menu class="sub-menu underline"><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Name</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Type</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;Si</span><span class="line">ze</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Date</span></span></label></li><li><hr></li><li><label class="label-disabled">Auto Arrange</label></li></menu></li><li><label class="label-disabled"><span><span>Lin</span><span class="line">e up Icons</span></span></label></li><li><hr></li><li><label class="label-disabled">Refresh</label></li><li><label class="label-disabled">Options...</label></li>
+                                <li><a class='label-nested'><span><span>Arrange&nbsp;</span><span class='line'>Icons</span></span></a><menu class='sub-menu underline'><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Name</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Type</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;Si</span><span class='line'>ze</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Date</span></span></label></li><li><hr></li><li><label class='label-disabled'>Auto Arrange</label></li></menu></li><li><label class='label-disabled'><span><span>Lin</span><span class='line'>e up Icons</span></span></label></li><li><hr></li><li><label class='label-disabled'>Refresh</label></li><li><label class='label-disabled'>Options...</label></li>
                             </menu>
                         </li>
                         <li>
                             <a class='menu-item-help' data-label href='#'>Help</a>
-                            <menu class="sub-menu underline"><li><label class="label-disabled">Help Topics</label></li><li><hr></li><li><label class="label-disabled">About Windows 95</label></li></menu>
+                            <menu class='sub-menu underline'><li><label class='label-disabled'>Help Topics</label></li><li><hr></li><li><label class='label-disabled'>About Windows 95</label></li></menu>
                         </li>
                     </menu>
                     <div class='window-content'>
@@ -607,8 +612,8 @@
                         <li>
                             <a class='menu-item-edit' data-label href='#'>Edit</a>
                             <menu class='sub-menu underline'>
-                                <li><label class="label-disabled">Undo</label></li><li><hr></li><li><label class="label-disabled"><span><span>Cu</span><span class="line">t</span></span></label></li><li><label class="label-disabled">Copy</label></li><li><label class="label-disabled">Paste</label></li>
-                                <li><label class="label-disabled"><span><span>Paste&nbsp;</span><span class="line">Shortcut</span></span></label></li><li><hr></li><li><label class="label-disabled"><span><span>Select&nbsp;</span><span class="line">All</span></span></label></li><li><label class="label-disabled">Invert Selection</label></li>
+                                <li><label class='label-disabled'>Undo</label></li><li><hr></li><li><label class='label-disabled'><span><span>Cu</span><span class='line'>t</span></span></label></li><li><label class='label-disabled'>Copy</label></li><li><label class='label-disabled'>Paste</label></li>
+                                <li><label class='label-disabled'><span><span>Paste&nbsp;</span><span class='line'>Shortcut</span></span></label></li><li><hr></li><li><label class='label-disabled'><span><span>Select&nbsp;</span><span class='line'>All</span></span></label></li><li><label class='label-disabled'>Invert Selection</label></li>
                             </menu>
                         </li>
                         <li>
@@ -646,12 +651,12 @@
                                 <li>
                                     <hr>
                                 </li>
-                                <li><a class="label-nested"><span><span>Arrange&nbsp;</span><span class="line">Icons</span></span></a><menu class="sub-menu underline"><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Name</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Type</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;Si</span><span class="line">ze</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Date</span></span></label></li><li><hr></li><li><label class="label-disabled">Auto Arrange</label></li></menu></li><li><label class="label-disabled"><span><span>Lin</span><span class="line">e up Icons</span></span></label></li><li><hr></li><li><label class="label-disabled">Refresh</label></li><li><label class="label-disabled">Options...</label></li>
+                                <li><a class='label-nested'><span><span>Arrange&nbsp;</span><span class='line'>Icons</span></span></a><menu class='sub-menu underline'><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Name</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Type</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;Si</span><span class='line'>ze</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Date</span></span></label></li><li><hr></li><li><label class='label-disabled'>Auto Arrange</label></li></menu></li><li><label class='label-disabled'><span><span>Lin</span><span class='line'>e up Icons</span></span></label></li><li><hr></li><li><label class='label-disabled'>Refresh</label></li><li><label class='label-disabled'>Options...</label></li>
                             </menu>
                         </li>
                         <li>
                             <a class='menu-item-help' data-label href='#'>Help</a>
-                            <menu class="sub-menu underline"><li><label class="label-disabled">Help Topics</label></li><li><hr></li><li><label class="label-disabled">About Windows 95</label></li></menu>
+                            <menu class='sub-menu underline'><li><label class='label-disabled'>Help Topics</label></li><li><hr></li><li><label class='label-disabled'>About Windows 95</label></li></menu>
                         </li>
                     </menu>
                     <div class='window-content'>
@@ -756,7 +761,7 @@
                         <li>
                             <a class='menu-item-edit' data-label href='#'>Edit</a>
                             <menu class='sub-menu underline'>
-                                <li><label class="label-disabled">Undo</label></li><li><hr></li><li><label class="label-disabled"><span><span>Cu</span><span class="line">t</span></span></label></li><li><label class="label-disabled">Copy</label></li><li><label class="label-disabled">Paste</label></li>
+                                <li><label class='label-disabled'>Undo</label></li><li><hr></li><li><label class='label-disabled'><span><span>Cu</span><span class='line'>t</span></span></label></li><li><label class='label-disabled'>Copy</label></li><li><label class='label-disabled'>Paste</label></li>
                                 <li>
                                     <label class='label-disabled'>
                                         <span><span>De</span><span class='line'>lete</span></span>
@@ -812,7 +817,7 @@
                         </li>
                     </menu>
                     <div class='window-content textarea-container'>
-                        <textarea></textarea>
+                        <textarea>Jungle book - Lilo & Stitch</textarea>
                     </div>
                 </div>
             </div>
@@ -897,8 +902,8 @@
                         <li>
                             <a class='menu-item-edit' data-label href='#'>Edit</a>
                             <menu class='sub-menu underline'>
-                                <li><label class="label-disabled">Undo</label></li><li><hr></li><li><label class="label-disabled"><span><span>Cu</span><span class="line">t</span></span></label></li><li><label class="label-disabled">Copy</label></li><li><label class="label-disabled">Paste</label></li>
-                                <li><label class="label-disabled"><span><span>Paste&nbsp;</span><span class="line">Shortcut</span></span></label></li><li><hr></li><li><label class="label-disabled"><span><span>Select&nbsp;</span><span class="line">All</span></span></label></li><li><label class="label-disabled">Invert Selection</label></li>
+                                <li><label class='label-disabled'>Undo</label></li><li><hr></li><li><label class='label-disabled'><span><span>Cu</span><span class='line'>t</span></span></label></li><li><label class='label-disabled'>Copy</label></li><li><label class='label-disabled'>Paste</label></li>
+                                <li><label class='label-disabled'><span><span>Paste&nbsp;</span><span class='line'>Shortcut</span></span></label></li><li><hr></li><li><label class='label-disabled'><span><span>Select&nbsp;</span><span class='line'>All</span></span></label></li><li><label class='label-disabled'>Invert Selection</label></li>
                             </menu>
                         </li>
                         <li>
@@ -936,7 +941,7 @@
                                 <li>
                                     <hr>
                                 </li>
-                                <li><a class="label-nested"><span><span>Arrange&nbsp;</span><span class="line">Icons</span></span></a><menu class="sub-menu underline"><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Name</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Type</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;Si</span><span class="line">ze</span></span></label></li><li><label class="label-disabled"><span><span>by&nbsp;</span><span class="line">Date</span></span></label></li><li><hr></li><li><label class="label-disabled">Auto Arrange</label></li></menu></li><li><label class="label-disabled"><span><span>Lin</span><span class="line">e up Icons</span></span></label></li><li><hr></li><li><label class="label-disabled">Refresh</label></li><li><label class="label-disabled">Options...</label></li>
+                                <li><a class='label-nested'><span><span>Arrange&nbsp;</span><span class='line'>Icons</span></span></a><menu class='sub-menu underline'><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Name</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Type</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;Si</span><span class='line'>ze</span></span></label></li><li><label class='label-disabled'><span><span>by&nbsp;</span><span class='line'>Date</span></span></label></li><li><hr></li><li><label class='label-disabled'>Auto Arrange</label></li></menu></li><li><label class='label-disabled'><span><span>Lin</span><span class='line'>e up Icons</span></span></label></li><li><hr></li><li><label class='label-disabled'>Refresh</label></li><li><label class='label-disabled'>Options...</label></li>
                             </menu>
                         </li>
                         <li>
@@ -960,7 +965,7 @@
                         </li>
                         <li>
                             <a class='menu-item-help' data-label href='#'>Help</a>
-                            <menu class="sub-menu underline"><li><label class="label-disabled">Help Topics</label></li><li><hr></li><li><label class="label-disabled">About Windows 95</label></li></menu>
+                            <menu class='sub-menu underline'><li><label class='label-disabled'>Help Topics</label></li><li><hr></li><li><label class='label-disabled'>About Windows 95</label></li></menu>
                         </li>
                     </menu>
                     <div class='window-content'>
@@ -1009,10 +1014,13 @@
                                                                 </label>
                                                                 <menu>
                                                                     <li>
-                                                                        <label class='label-folder-small long'>Microsoft Exchange</label>
+                                                                        <label class='label-folder-small long'>Turkey</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class='label-folder-small long'>The Microsoft Network</label>
+                                                                        <label class='label-folder-small long'>Brasil</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class='label-folder-small long'>Indonesia</label>
                                                                     </li>
                                                                 </menu>
                                                             </li>
@@ -1271,10 +1279,13 @@
                                 <div class='list-container'>
                                     <menu class='list'>
                                         <li>
-                                            <label class='label-folder-small long'>Microsoft Exchange</label>
+                                            <label class='label-folder-small long'>Turkey</label>
                                         </li>
                                         <li>
-                                            <label class='label-folder-small long'>The Microsoft Network</label>
+                                            <label class='label-folder-small long'>Brasil</label>
+                                        </li>
+                                        <li>
+                                            <label class='label-folder-small long'>Indonesia</label>
                                         </li>
                                     </menu>
                                 </div>
@@ -1514,10 +1525,16 @@
                         </div>
                     </div>
                 </div>
+            </div>          
+            <div id="carousel-container">
+                <button id="prev">&#9664;</button>
+                <img id="carousel-image" src="src/images/1.jpg" alt="Photo">
+                <button id="next">&#9654;</button>
             </div>
         </div>
     </div>
     <div class='start-menu-outline' id='start-menu-outline'></div>
+    <!--Windows button-->
     <nav class='start-menu' id='start-menu'>
         <label class='label-start' for='start' tabindex='0'>Start</label>
         <div class='menu-container'>
@@ -1657,6 +1674,7 @@
             <time class='clock'>12:00 AM</time>
         </div>
     </nav>
+    <!--Shut down computer-->
     <div id='alerts'>
         <div id='alert-blue-screen'>
             <div class='content'>
@@ -1666,7 +1684,8 @@
                 <p>An error has occured. To continue:</p>
                 <p>Press Enter to return to Windows, or</p>
                 <p>Press CTRL to restart your computer. If you do this, you will lose any unsaved information in all open applications.</p>
-                <p>Error: GABRIELLEWEE1</p>
+                <p>And you might not know that we don't like cooking that much</p>
+                <p>Did you find all the clues? ...</p>
                 <p>
                     Press any key to continue
                     <span class='blink'>_</span>
@@ -1684,8 +1703,8 @@
                     </div>
                 </div>
                 <div class='alert-content'>
-                    <p>A:\ is not accessible.</p>
-                    <p>The device is not ready.</p>
+                    <p>Degree: Computer Science</p>
+                    <p>We don't know how it happened</p>
                 </div>
                 <footer class='alert-footer'>
                     <button class='button underline' data-retry tabindex='0'>
@@ -1708,8 +1727,8 @@
                     </div>
                 </div>
                 <div class='alert-content'>
-                    <p>B:\ is not accessible.</p>
-                    <p>The device is not ready.</p>
+                    <p>No broken bones or hearts</p>
+                    <p>Very strong eh</p>
                 </div>
                 <footer class='alert-footer'>
                     <button class='button underline' data-retry tabindex='0'>
@@ -1723,7 +1742,8 @@
         </div>
     </div>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
-<script src="script.js" defer></script>
+<script src='https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js'></script>
+<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
