@@ -48,7 +48,6 @@
 <input data-name='dino-game' data-window-trigger hidden id='dino-game' type='checkbox'>
 <input data-minimize data-name='dino-game' hidden id='dino-game-minimize' type='checkbox'>
 <input data-maximize data-name='dino-game' hidden id='dino-game-maximize' type='checkbox'>
-<input data-name='recycle-bin' data-window-trigger hidden id='recycle-bin' type='checkbox'>
 <input data-minimize data-name='recycle-bin' hidden id='recycle-bin-minimize' type='checkbox'>
 <input data-maximize data-name='recycle-bin' hidden id='recycle-bin-maximize' type='checkbox'>
 <main>
@@ -64,9 +63,12 @@
             <label class='desktop-icon label-recycle-bin' tabindex="0">
                 <span id="recycle-bin">Don't look</span>
             </label>
-            <label class='desktop-icon label-program' for='dino-game' tabindex='0'>
-                <span>Dino Game</span>
-            </label>
+            <a href="run.html" target="_blank">
+                <label class='desktop-icon label-program' tabindex='0'>
+
+                    <span>Dino Game</span>
+                </label>
+            </a>
         </div>
         
         <div id='windows'>
@@ -97,9 +99,7 @@
                     </div>
                     <div class='window-footer'>
                         <label class='button' for='welcome' tabindex='0'>
-                            <button id='start-mission-btn' class='button' style='padding: 6px 12px; font-weight: bold; cursor: pointer; background-color: #c0c0c0; border: outset 2px #dfdfdf; font-family: 'MS Sans Serif', sans-serif;'>
-                            <span>START MISSION</span>
-                            </button>
+                            <span>Start Mission</span>
                         </label>
                     </div>
                 </div>
@@ -1502,30 +1502,6 @@
                     </div>
                 </div>
             </div>
-            <div class='window' data-window id='window-dino-game'>
-                <div class='window-inside'>
-                    <nav class='window-nav'>
-                        <h3>
-                            <span>Dino Game</span>
-                        </h3>
-                        <div class='buttons'>
-                            <label class='minimize' for='dino-game-minimize' tabindex='0'></label>
-                            <label class='maximize' for='dino-game-maximize' tabindex='0'></label>
-                            <label class='close' for='dino-game' tabindex='0'></label>
-                        </div>
-                    </nav>
-                    <div class='window-content'>
-                        <div class='dino-game-container'>
-                            <!-- Game content will go here -->
-                        </div>
-                    </div>
-                    <div class='window-footer'>
-                        <div class='status-bar'>
-                            <p>Ready</p>
-                        </div>
-                    </div>
-                </div>
-            </div>          
             <div id="image-container"></div>
         </div>
     </div>
